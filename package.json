@@ -1,0 +1,53 @@
+{
+  "name": "any-restapi-errors",
+  "version": "2.0.1",
+  "main": "index.js",
+  "description": "npm module for handling and logging errors in Node.js API",
+  "type": "module",
+  "keywords": [
+    "tutorial",
+    "es6",
+    "education",
+    "example",
+    "how-to",
+    "module",
+    "package",
+    "error-handling",
+    "error-logging",
+    "nodejs",
+    "api",
+    "restapi",
+    "express",
+    "error",
+    "logging",
+    "error-handling-module",
+    "error-logging-module",
+    "error-handler",
+    "error-logger",
+    "error-management",
+    "error-tracking",
+    "error-reporting",
+    "error-monitoring",
+    "error-capture",
+    "error-notification",
+    "error-debugging",
+    "error-analysis",
+    "error-resolution",
+    "error-prevention",
+    "error-mitigation",
+    "error-response",
+    "error-response-module",
+    "error-response-handler",
+    "error-response-logger",
+    "error-response-management"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^3.17.0"
+  }
+}

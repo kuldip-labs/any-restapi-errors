@@ -1,0 +1,102 @@
+{
+  "400": {
+    "message": "Bad Request",
+    "description": "The request cannot be fulfilled due to bad syntax"
+  },
+  "401": {
+    "message": "Unauthorized",
+    "description": "The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided"
+  },
+  "402": {
+    "message": "Payment Required",
+    "description": "Reserved for future use"
+  },
+  "403": {
+    "message": "Forbidden",
+    "description": "The request was a legal request, but the server is refusing to respond to it"
+  },
+  "404": {
+    "message": "Not Found",
+    "description": "The requested page could not be found but may be available again in the future"
+  },
+  "405": {
+    "message": "Method Not Allowed",
+    "description": "A request was made of a page using a request method not supported by that page"
+  },
+  "406": {
+    "message": "Not Acceptable",
+    "description": "The server can only generate a response that is not accepted by the client"
+  },
+  "407": {
+    "message": "Proxy Authentication Required",
+    "description": "The client must first authenticate itself with the proxy"
+  },
+  "408": {
+    "message": "Request Timeout",
+    "description": "The server timed out waiting for the request"
+  },
+  "409": {
+    "message": "Conflict",
+    "description": "The request could not be completed because of a conflict in the request"
+  },
+  "410": {
+    "message": "Gone",
+    "description": "The requested page is no longer available"
+  },
+  "411": {
+    "message": "Length Required",
+    "description": "The \"Content-Length\" is not defined. The server will not accept the request without it"
+  },
+  "412": {
+    "message": "Precondition Failed",
+    "description": "The precondition given in the request evaluated to false by the server"
+  },
+  "413": {
+    "message": "Request Too Large",
+    "description": "The server will not accept the request, because the request entity is too large"
+  },
+  "414": {
+    "message": "Request-URI Too Long",
+    "description": "The server will not accept the request, because the URI is too long. Occurs when you convert a POST request to a GET request with a long query information"
+  },
+  "415": {
+    "message": "Unsupported Media Type",
+    "description": "The server will not accept the request, because the media type is not supported"
+  },
+  "416": {
+    "message": "Range Not Satisfiable",
+    "description": "The client has asked for a portion of the file, but the server cannot supply that portion"
+  },
+  "417": {
+    "message": "Expectation Failed",
+    "description": "The server cannot meet the requirements of the Expect request-header field"
+  },
+  "500": {
+    "message": "Internal Server Error",
+    "description": "A generic error message, given when no more specific message is suitable"
+  },
+  "501": {
+    "message": "Not Implemented",
+    "description": "The server either does not recognize the request method, or it lacks the ability to fulfill the request"
+  },
+  "502": {
+    "message": "Bad Gateway",
+    "description": "The server was acting as a gateway or proxy and received an invalid response from the upstream server"
+  },
+  "503": {
+    "message": "Service Unavailable",
+    "description": "The server is currently unavailable (overloaded or down)"
+  },
+  "504": {
+    "message": "Gateway Timeout",
+    "description": "The server was acting as a gateway or proxy and did not receive a timely response from the upstream server"
+  },
+  "505": {
+    "message": "HTTP Version Not Supported",
+    "description": "The server does not support the HTTP protocol version used in the request"
+  },
+  "511": {
+    "message": "Network Authentication Required",
+    "description": "The client needs to authenticate to gain network access"
+  }
+}
