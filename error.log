@@ -1,0 +1,20 @@
+{
+  statusCode: 404,
+  name: 'ApiError',
+  message: 'Not Found',
+  description: 'The requested page could not be found but may be available again in the future',
+  isOperational: true,
+  stack: 'ApiError: Not Found\n' +
+    '    at new BaseError (file:///D:/projects/any-restapi-errors/apiErrors/baseError.js:10:8)\n' +
+    '    at new ApiError (file:///D:/projects/any-restapi-errors/apiErrors/apiError.js:12:2)\n' +
+    '    at file:///D:/projects/any-restapi-errors/test-server.js:13:11\n' +
+    '    at Layer.handleRequest (D:\\projects\\any-restapi-errors\\node_modules\\router\\lib\\layer.js:152:17)\n' +
+    '    at next (D:\\projects\\any-restapi-errors\\node_modules\\router\\lib\\route.js:157:13)\n' +
+    '    at Route.dispatch (D:\\projects\\any-restapi-errors\\node_modules\\router\\lib\\route.js:117:3)\n' +
+    '    at handle (D:\\projects\\any-restapi-errors\\node_modules\\router\\index.js:435:11)\n' +
+    '    at Layer.handleRequest (D:\\projects\\any-restapi-errors\\node_modules\\router\\lib\\layer.js:152:17)\n' +
+    '    at D:\\projects\\any-restapi-errors\\node_modules\\router\\index.js:295:15\n' +
+    '    at processParams (D:\\projects\\any-restapi-errors\\node_modules\\router\\index.js:582:12)',
+  level: 'error',
+  timestamp: '2025-08-21 14:16:50'
+}
