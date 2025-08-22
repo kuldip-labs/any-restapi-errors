@@ -7,7 +7,7 @@ statusCode,
 name,
  message,
  description,
- isOperational = true,
+ isOperational= true,
  ) {
  super(name, message, description, isOperational)
     this.statusCode = statusCode;
@@ -35,7 +35,13 @@ name,
             statusCode: this.statusCode
                 }
     } 
-}                                                                                                    
+}  
+ isOperationalError = function(error) {
+ if (error instanceof ApiError) {
+ return error.isOperational
+ }
+ return false
+}                                                                                                  
 }
 
 export default ApiError
