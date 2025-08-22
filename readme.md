@@ -16,7 +16,9 @@ import  {apiError} from 'any-restapi-errors';
   try {
     if (user === null) {
 throw new apiError(404); 
-// or with name as well throw new apiError(404,"User not found");
+// or with name as well throw new apiError(500, "caught error with try catch block", false);
+//params are : new apiError(statusCode,name, isOperational, message, description)
+// defaults are given except status code
 }
   } catch (error) {
     // Log the error using the custom error logger

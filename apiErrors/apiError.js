@@ -5,16 +5,17 @@ class ApiError extends BaseError {
  constructor (
 statusCode,
 name,
+ isOperational = true,
  message,
  description,
- isOperational= true,
+
  ) {
  super(name, message, description, isOperational)
     this.statusCode = statusCode;
     this.name = name || 'ApiError';
+    this.isOperational = isOperational; 
     this.message = statusCodes[`${statusCode}`].message || 'ApiError';
     this.description = statusCodes[`${statusCode}`].description || 'An error occurred';
-    this.isOperational = isOperational; 
  }
   errorLogger = function() {
       logger.error({
