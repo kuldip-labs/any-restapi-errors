@@ -26,6 +26,16 @@ name,
         stack: this.stack
     })
 }
+    resObj = function() {
+    return {
+        error: {
+            name: this.name,
+            message: this.message,
+            description: this.description,
+            statusCode: this.statusCode
+                }
+    } 
+}                                                                                                    
 }
 
 export default ApiError

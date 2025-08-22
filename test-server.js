@@ -4,7 +4,12 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  const error = new Error("An error message")
+  console.log(error.message)
+  console.log(error.stack)
+  console.log(error.name)
+  console.log(error.toString())
+  res.send(error)
 })
 
 app.get('/error', (req, res) => {   
@@ -12,18 +17,10 @@ app.get('/error', (req, res) => {
   try {
     throw new apiError(404);
   } catch (error) {
-    console.error(error);
+    console.error(error.description);
     // Log the error using the custom error logger
     error.errorLogger();
-    res.status(error.statusCode || 500).send({
-      error: {
-        name: error.name,
-        message: error.message,
-        description: error.description,
-        statusCode: error.statusCode,
-        isOperational: error.isOperational
-      }
-    });
+    res.status(error.statusCode || 500).send(error.resObj());
   }
   
 })
