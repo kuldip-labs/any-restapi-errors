@@ -33,7 +33,16 @@ throw new apiError(404);
     }); **/
   }
 ```
-### Error Handler
+### Operational Error (not a bug done by programmers) examples
+* failed to connect to server
+* failed to resolve hostname
+* invalid user input
+* request timeout
+* server returned a 500 response
+* socket hang-up
+* system is out of memory
+
+### Operational Error Handler
 * Quick use ```import  {apiError} from 'any-restapi-errors'; throw new apiError(404);``` : this will throw error object which will have enough detail in error object. You can catch error in catch block. error will have errorLogger method and necessary properties.You can pass any error code ex. 400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,504,505,511.
 * Detailed use Throw: throw new apiError(statusCode, "Your message")
 
@@ -68,4 +77,35 @@ which will return following error object
     }
 }
 ```
+
+## Programatic Errors
+* Programmer errors almost always → 500 (generic).
+* Don’t leak stack traces or sensitive details to the client.
+* Handle them with logging + monitoring, not detailed HTTP codes.
+### Examples 
+* called an asynchronous function without a callback
+* did not resolve a promise
+* did not catch a rejected promise
+* passed a string where an object was expected
+* passed an object where a string was expected
+* passed incorrect parameters in a function
+
+### Exit gracefully if its not operational errors (Programatic errors)
+```javascript
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+  if (!error.isOperational) {
+    // log it and exit the process
+    process.exit(1);
+  }
+})
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  // log it, exit the process
+  process.exit(1);
+})
+```
+
+
 
