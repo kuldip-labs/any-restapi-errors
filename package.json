@@ -1,6 +1,6 @@
 {
   "name": "any-restapi-errors",
-  "version": "2.2.0",
+  "version": "2.2.2",
   "main": "index.js",
   "description": "npm module for handling and logging errors in Node.js API",
   "type": "module",

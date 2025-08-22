@@ -78,19 +78,21 @@ which will return following error object
 }
 ```
 
-## Programatic Errors
+## Programatic Errors (bug introduced by programmers)
 * Programmer errors almost always → 500 (generic).
 * Don’t leak stack traces or sensitive details to the client.
 * Handle them with logging + monitoring, not detailed HTTP codes.
 ### Examples 
-* called an asynchronous function without a callback
-* did not resolve a promise
-* did not catch a rejected promise
-* passed a string where an object was expected
-* passed an object where a string was expected
-* passed incorrect parameters in a function
+* Using an undefined variable
+* Accessing properties of null / undefined
+* Forgetting await → unhandled Promise rejections
+* Infinite loops / recursion → stack overflow
+* Wrong type assumptions (e.g., calling .map on a non-array)
+* These are bugs in code, not client/server operational issues.
 
 ### Exit gracefully if its not operational errors (Programatic errors)
+*  These errors can often cause issues in your apps like memory leaks and high CPU usage. The best thing to do is to crash the app and restart it gracefully by using the Node.js cluster mode or a tool like PM2.
+
 ```javascript
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
