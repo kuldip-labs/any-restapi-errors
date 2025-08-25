@@ -12,28 +12,28 @@
 
 ### Example 
 ```javascript
-import  {apiError} from 'any-restapi-errors';
-  try {
-    if (user === null) {
-throw new apiError(404); 
-// or with name as well throw new apiError(500, "caught error with try catch block", false);
-//params are : new apiError(statusCode,name, isOperational, message, description)
-// defaults are given except status code
+import { apiError } from 'any-restapi-errors';
+try {
+  if (user === null) {
+    /* Handle the case where user is null */
+    throw new apiError(404);
+    /* or with name as well throw new apiError(404, "User Not Found", true); */
+    //params are : new apiError(statusCode,name, isOperational, message, description)
+   }
+} catch (error) {
+  // Log the error using the custom error logger
+  error.errorLogger();
+  res.status(error.statusCode || 500).send(error.resObj());
+  /** or res.status(error.statusCode || 500).send({
+    error: {
+      name: error.name,
+      message: error.message,
+      statusCode: error.statusCode,
+      description:error.description,
+      isOperational: error.isOperational
+    }
+  }); **/
 }
-  } catch (error) {
-    // Log the error using the custom error logger
-    error.errorLogger();
-    res.status(error.statusCode || 500).send(error.resObj());
-    /** or res.status(error.statusCode || 500).send({
-      error: {
-        name: error.name,
-        message: error.message,
-        statusCode: error.statusCode,
-        description:error.description,
-        isOperational: error.isOperational
-      }
-    }); **/
-  }
 ```
 ### Operational Error (not a bug done by programmers) examples
 * failed to connect to server
